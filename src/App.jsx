@@ -31,8 +31,6 @@ function App() {
 			<hr />
 			<EducationSection />
 			<hr />
-			<AboutSection />
-            <hr />
 			<ContactSection />
 			<hr />
 			<Footer />
