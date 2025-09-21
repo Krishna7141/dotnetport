@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import KrishImg from '../assets/picture.jpg'
 import Blob from '../assets/others/blob.svg'
 import { TypeAnimation } from 'react-type-animation'
+import signatureImg from '../assets/signature.png';
 
 
 const HeroSection = () => {
@@ -19,17 +20,11 @@ const HeroSection = () => {
                     <Link to={'https://www.linkedin.com/in/krishna-chelluboina/'} target='_blank'>
                         <FiLinkedin className='text-blue-700 hover:drop-shadow-md' size={30}/>
                     </Link>
-                    <Link to={'https://github.com/Krishna7141'} target='_blank'>
-                        <FiGithub className='text-blue-700 hover:drop-shadow-md' size={30}/>
-                    </Link>
-                    <Link to={'mailto:krishnavamsich2000@gmail.com'} target='_blank'>
+                    <Link to={'mailto:kvchelluboina@gmail.com'} target='_blank'>
                         <FiMail className='text-blue-700 hover:drop-shadow-md' size={30}/>
                     </Link>
                     <Link to={'https://x.com/krish127228?s=21'} target='_blank'>
                         <RiTwitterXLine className='text-blue-700 hover:drop-shadow-md' size={30}/>
-                    </Link>
-                    <Link to={'https://www.instagram.com/__vamsi46__/'} target='_blank'>
-                        <FiInstagram className='text-blue-700 hover:drop-shadow-md' size={30}/>
                     </Link>
                 </div>
                 <div className='flex flex-col gap-7 w-full'>
@@ -60,6 +55,9 @@ const HeroSection = () => {
             <div className=''>
                 {/* <img src={Blob} className='absolute z-50 h-[500px] -translate-x-5 translate-y-10 scale-150 opacity-80'/> */}
                 <img src={KrishImg} className='z-50 contrast-125 scale-95 transition-all duration-1000 max-h-[430px]'/>
+                <img src={signatureImg} alt="Signature"
+                     className="w-40 mx-auto mt-4 opacity-90 transition-opacity duration-700 hover:opacity-100" />
+
             </div>
         </div>
 

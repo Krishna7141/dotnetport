@@ -56,7 +56,7 @@ const WorkSection = () => {
           <img src={AMFAMImg} alt="American Family Insurance" className="w-full h-48 object-cover" />
           <div className="p-6">
             <h3 className="text-2xl font-bold">Full Stack .NET Developer – American Family Insurance</h3>
-            <p className="text-gray-500 italic">Jun 2016 – Dec 2017</p>
+            <p className="text-gray-500 italic">Feb 2018 – Apr 2020</p>
             <p className="mt-3">
               Built insurance policy management modules using ASP.NET MVC, C#, and SQL Server;
               enhanced claims processing and ensured compliance with SOX and PCI-DSS standards.
@@ -69,7 +69,7 @@ const WorkSection = () => {
           <img src={HSBCImg} alt="HSBC" className="w-full h-48 object-cover" />
           <div className="p-6">
             <h3 className="text-2xl font-bold">Full Stack .NET Developer – HSBC</h3>
-            <p className="text-gray-500 italic">Jan 2018 – Apr 2020</p>
+            <p className="text-gray-500 italic">Jan 2015 – Nov 2017</p>
             <p className="mt-3">
               Engineered banking applications for global transactions, integrating .NET Core,
               SQL Server, and secure API gateways for high-volume financial services.

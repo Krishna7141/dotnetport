@@ -19,9 +19,9 @@ const EducationSection = () => {
                         <p className='text-black opacity-80 text-base md:text-lg'>Lovely Professional University</p>
                         <p className='text-black opacity-80 flex items-center gap-1 text-base md:text-lg'>
                             <FaRegCalendarAlt/>
-                            <p>2017-2021</p>
+                            <p>2012-2016</p>
                         </p>
-                        <p className='text-black opacity-80 text-base md:text-lg'>Aggregate: 89.9</p>
+                        <p className='text-black opacity-80 text-base md:text-lg'>Aggregate: 89.9 %</p>
                     </div>
                 </div>
             </div>

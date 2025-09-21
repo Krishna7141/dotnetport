@@ -46,7 +46,7 @@ const ContactSection = () => {
                 <textarea
                     name='message'
                     required
-                    placeholder='Intrested To Hire You'
+                    placeholder='Hey Krishna “Im interested in hiring you”'
                     className='border-2 border-[#1D4ED8] h-[200px] p-3 rounded-lg w-full'
                 />
             </label>
