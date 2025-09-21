@@ -3,7 +3,7 @@ import Typed from 'typed.js'
 import { FiLinkedin, FiGithub, FiTwitter, FiInstagram, FiMail } from 'react-icons/fi'
 import { RiTwitterXLine, RiGoogleFill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
-import KrishImg from '../assets/picture.jpg'
+import KrishImg from '../assets/picture1.png'
 import Blob from '../assets/others/blob.svg'
 import { TypeAnimation } from 'react-type-animation'
 import signatureImg from '../assets/signature1.png';
