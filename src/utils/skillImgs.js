@@ -32,6 +32,6 @@ import AWS from '../assets/stack-2/AWS-Dark.svg'
 import Python from '../assets/stack-2/Python-Dark.svg'
 import Firebase from '../assets/stack-2/Firebase-Dark.svg'
 import Figma from '../assets/stack-2/Figma-Dark.svg'
-import NetCore from '../assets/stack-2/netcore.png';
+import NetCore from '../assets/stack-2/netcore.svg';
 
 export default [CPP, JS, TS, Java, Python, ReactJS, NextJS, NodeJS, ExpressJS, /*Spring,*/ SpringBoot, SpringData, Hibernate, /*Hibernate,*/ /*Maven,*/ PostgreSQL, MySQL, MongoDB, Redis, Prisma, Redux, /*HTML, CSS,*/ TailwindCSS, WebSockets, Git, GitHub, /*Postman,*/ AWS, Docker, NetCore];
