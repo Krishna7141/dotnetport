@@ -1,5 +1,5 @@
 import Csharp from '../assets/stack-2/Csharp.svg'
-import NetCore from '../assets/stack-2/Netcore.svg'
+import NetCore from '../assets/stack-2/NetCore.svg'
 import AspNet from '../assets/stack-2/Aspnet.svg'
 import Java from '../assets/stack-2/Java-Dark.svg'
 import Python from '../assets/stack-2/Python-Dark.svg'
