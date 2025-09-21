@@ -1,3 +1,4 @@
+import AspNet from '../assets/stack-2/aspnet.svg';
 import JS from '../assets/stack-2/JavaScript.svg'
 import TS from '../assets/stack-2/TypeScript.svg'
 import NodeJS from '../assets/stack-2/NodeJS-Dark.svg'
@@ -34,4 +35,4 @@ import Firebase from '../assets/stack-2/Firebase-Dark.svg'
 import Figma from '../assets/stack-2/Figma-Dark.svg'
 import NetCore from '../assets/stack-2/netcore.svg';
 
-export default [CPP, JS, TS, Java, Python, ReactJS, NextJS, NodeJS, ExpressJS, /*Spring,*/ SpringBoot, SpringData, Hibernate, /*Hibernate,*/ /*Maven,*/ PostgreSQL, MySQL, MongoDB, Redis, Prisma, Redux, /*HTML, CSS,*/ TailwindCSS, WebSockets, Git, GitHub, /*Postman,*/ AWS, Docker, NetCore];
+export default [AspNet, CPP, JS, TS, Java, Python, ReactJS, NextJS, NodeJS, ExpressJS, /*Spring,*/ SpringBoot, SpringData, Hibernate, /*Hibernate,*/ /*Maven,*/ PostgreSQL, MySQL, MongoDB, Redis, Prisma, Redux, /*HTML, CSS,*/ TailwindCSS, WebSockets, Git, GitHub, /*Postman,*/ AWS, Docker, NetCore];
