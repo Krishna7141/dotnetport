@@ -1,6 +1,6 @@
+import Csharp from '../assets/stack-2/csharp.svg'
 import NetCore from '../assets/stack-2/netcore.svg'
 import AspNet from '../assets/stack-2/aspnet.svg'
-import Csharp from '../assets/stack-2/csharp.svg'
 import Java from '../assets/stack-2/Java-Dark.svg'
 import Python from '../assets/stack-2/Python-Dark.svg'
 import Angular from '../assets/stack-2/angular.svg'
