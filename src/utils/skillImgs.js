@@ -39,4 +39,4 @@ import AWS from '../assets/stack-2/AWS-Dark.svg';
 import Firebase from '../assets/stack-2/Firebase-Dark.svg'
 import Figma from '../assets/stack-2/Figma-Dark.svg';
 
-export default [Csharp, NetCore, AspNet, Java, Python, CPP, Angular, JS, TS, ReactJS, NextJS, NodeJS, ExpressJS, /*Spring,*/ SpringBoot, SpringData, Hibernate, /*Hibernate,*/ /*Maven,*/ PostgreSQL, MySQL, MongoDB, Redis, Prisma, Redux, HTML, CSS, TailwindCSS, WebSockets, Git, GitHub, Postman, Azure, AWS, Docker];
+export default [Csharp, NetCore, AspNet, Java, Python, CPP, Angular, JS, TS, ReactJS, NextJS, NodeJS, ExpressJS, /*Spring,*/ SpringBoot, SpringData, Hibernate, /*Hibernate,*/ /*Maven,*/ PostgreSQL, MySQL, MongoDB, Redis, Prisma, Redux, HTML, CSS, TailwindCSS, WebSockets, Git, GitHub, Postman, Docker, Azure, AWS,];
