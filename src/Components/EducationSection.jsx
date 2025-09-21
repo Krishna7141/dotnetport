@@ -6,9 +6,9 @@ import { GoMortarBoard } from 'react-icons/go'
 
 const EducationSection = () => {
   return (
-    <div id='about' className='max-w-[1280px] min-h-[650px] w-3/4 lg:w-1/2 mt-10 mb-10 mx-auto'>
-        <div className='flex flex-col gap-2 mb-16'>
-            <p className='text-4xl font-semibold text-center'>About</p>
+    <div id='about' className='max-w-[1280px] min-h-[650px] w-3/4 lg:w-1/2 mt-4 mb-6 mx-auto'>
+        <div className='flex flex-col gap-2 mb-8'>
+            <p className='text-4xl font-semibold text-center'>Education</p>
             <p className='text-lg text-center opacity-70'>Academics and Educational Qualifications</p>
         </div>
         <div className='flex items-center justify-center mx-auto gap-28'>
