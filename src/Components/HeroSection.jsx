@@ -55,8 +55,7 @@ const HeroSection = () => {
                 {/* <img src={Blob} className='absolute z-50 h-[500px] -translate-x-5 translate-y-10 scale-150 opacity-80'/> */}
                 <img src={KrishImg} className='z-50 contrast-125 scale-95 transition-all duration-1000 max-h-[430px]'/>
                 <img src={signatureImg} alt="Signature"
-                     className="w-40 mx-auto mt-4 opacity-90 transition-opacity duration-700 hover:opacity-100" />
-
+                     className="w-40 mx-auto mt-2 opacity-90 drop-shadow-md transition-opacity duration-700 hover:opacity-100" />
             </div>
         </div>
 
