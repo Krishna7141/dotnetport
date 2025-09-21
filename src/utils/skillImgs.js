@@ -1,7 +1,9 @@
 import NetCore from '../assets/stack-2/netcore.svg'
 import AspNet from '../assets/stack-2/aspnet.svg'
+import Csharp from '../assets/stack-2/csharp.svg'
 import Java from '../assets/stack-2/Java-Dark.svg'
 import Python from '../assets/stack-2/Python-Dark.svg'
+import Angular from '../assets/stack-2/angular.svg'
 import JS from '../assets/stack-2/JavaScript.svg'
 import TS from '../assets/stack-2/TypeScript.svg'
 import NodeJS from '../assets/stack-2/NodeJS-Dark.svg'
@@ -31,8 +33,9 @@ import Docker from '../assets/stack-2/Docker.svg'
 import Mongoose_D from '../assets/stack-2/Mongoose-Dark.svg'
 import Mongoose_L from '../assets/stack-2/Mongoose.svg'
 import Prisma from '../assets/stack-2/Prisma.svg'
+import Azure from '../assets/stack-2/azure.svg'
 import AWS from '../assets/stack-2/AWS-Dark.svg';
 import Firebase from '../assets/stack-2/Firebase-Dark.svg'
 import Figma from '../assets/stack-2/Figma-Dark.svg';
 
-export default [NetCore, AspNet, Java, Python, CPP, JS, TS, ReactJS, NextJS, NodeJS, ExpressJS, /*Spring,*/ SpringBoot, SpringData, Hibernate, /*Hibernate,*/ /*Maven,*/ PostgreSQL, MySQL, MongoDB, Redis, Prisma, Redux, /*HTML, CSS,*/ TailwindCSS, WebSockets, Git, GitHub, /*Postman,*/ AWS, Docker];
+export default [Csharp, NetCore, AspNet, Java, Python, CPP, Angular, JS, TS, ReactJS, NextJS, NodeJS, ExpressJS, /*Spring,*/ SpringBoot, SpringData, Hibernate, /*Hibernate,*/ /*Maven,*/ PostgreSQL, MySQL, MongoDB, Redis, Prisma, Redux, HTML, CSS, TailwindCSS, WebSockets, Git, GitHub, Postman, Azure, AWS, Docker];
