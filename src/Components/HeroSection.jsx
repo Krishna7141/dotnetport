@@ -48,7 +48,6 @@ const HeroSection = () => {
                     <p className='text-xl text-justify'>A Senior Full Stack .NET Developer Contractor with 10+ years of experience. I love turning complex problems into clean, scalable solutions and believe great code is as much about people as it is about tech. Dark mode isnt a feature for me its a lifestyle.</p>
                     <div className='flex gap-4'>
                         <button className='border p-2 hover:bg-blue-900 bg-blue-700 rounded-lg text-white text-lg px-4 w-fit text-center'><a href='#contact'>Contact Me</a></button>
-                        <a href='/Krishna_Vamsi_Resume.pdf' target='_blank' className='border p-2 hover:bg-blue-900 bg-blue-700 rounded-lg text-white text-lg px-4 w-fit text-center'>📄Resume</a>
                     </div>
                 </div>
             </div>
