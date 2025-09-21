@@ -1,6 +1,6 @@
 import Csharp from '../assets/stack-2/Csharp.svg'
-import NetCore from '../assets/stack-2/NetCore.svg'
-import AspNet from '../assets/stack-2/Aspnet.svg'
+import Netcore from '../assets/stack-2/Netcore.svg'
+import AspNet from '../assets/stack-2/AspNet.svg'
 import Java from '../assets/stack-2/Java-Dark.svg'
 import Python from '../assets/stack-2/Python-Dark.svg'
 import CPP from '../assets/stack-2/CPP.svg'
@@ -34,9 +34,14 @@ import Docker from '../assets/stack-2/Docker.svg'
 import Mongoose_D from '../assets/stack-2/Mongoose-Dark.svg'
 import Mongoose_L from '../assets/stack-2/Mongoose.svg'
 import Prisma from '../assets/stack-2/Prisma.svg'
-import Azure from '../assets/stack-2/azure.svg'
-import AWS from '../assets/stack-2/AWS-Dark.svg';
+import Azure from '../assets/stack-2/Azure.svg'
+import AWS from '../assets/stack-2/AWS-Dark.svg'
 import Firebase from '../assets/stack-2/Firebase-Dark.svg'
-import Figma from '../assets/stack-2/Figma-Dark.svg';
+import Figma from '../assets/stack-2/Figma-Dark.svg'
 
-export default [Csharp, NetCore, AspNet, Java, Python, CPP, Angular, JS, TS, ReactJS, NextJS, NodeJS, ExpressJS, /*Spring,*/ SpringBoot, SpringData, Hibernate, /*Hibernate,*/ /*Maven,*/ PostgreSQL, MySQL, MongoDB, Redis, Prisma, Redux, HTML, CSS, TailwindCSS, WebSockets, Git, GitHub, Postman, Docker, Azure, AWS,];
+export default [
+  Csharp, Netcore, AspNet, Java, Python, CPP, Angular, JS, TS, ReactJS, NextJS,
+  NodeJS, ExpressJS, SpringBoot, SpringData, Hibernate, PostgreSQL, MySQL,
+  MongoDB, Redis, Prisma, Redux, HTML, CSS, TailwindCSS, WebSockets,
+  Git, GitHub, Postman, Docker, Azure, AWS
+]
