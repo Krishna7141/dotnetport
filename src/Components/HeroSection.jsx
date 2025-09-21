@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import KrishImg from '../assets/picture.jpg'
 import Blob from '../assets/others/blob.svg'
 import { TypeAnimation } from 'react-type-animation'
-import signatureImg from '../assets/signature.png';
+import signatureImg from '../assets/signature1.png';
 
 
 const HeroSection = () => {

@@ -2,7 +2,7 @@ import React from "react";
 
 const PersonalAboutSection = () => {
   return (
-    <section id="about" className="max-w-[900px] mx-auto px-6 py-16">
+    <section id="about" className="max-w-[900px] mx-auto px-6 py-8">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
         About Me
       </h2>
