@@ -100,11 +100,6 @@ const HeroSection = () => {
             </motion.p>
 
             <motion.div variants={itemVariants}>
-              <p className='text-2xl font-semibold mb-2 text-gray-700'>
-                <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
-                  Proble
-                </span>
-              </p>
               <TypeAnimation
                 sequence={[
                   'Senior Full-Stack .NET Developer', 2000,
