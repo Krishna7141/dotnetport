@@ -1,9 +1,7 @@
-import React from 'react'
-// import { FaHtml5, FaCss3Alt, FaNode, FaNodeJs, FaReact, FaGitAlt, FaGithub } from 'react-icons/fa'
-// import { SiJavascript, SiExpress, SiRedux, SiSocketdotio, SiTailwindcss, SiMongodb, SiMongoose, SiPostman, SiMysql, SiCplusplus, SiAppwrite, SiFirebase, SiVercel } from 'react-icons/si'
-import imgs from '../utils/skillImgs'
-
-const totalImgs = imgs.length;
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import imgs from '../utils/skillImgs';
 
 function extractLanguageName(path) {
   const parts = path.split('/');  
@@ -13,51 +11,112 @@ function extractLanguageName(path) {
 }
 
 const SkillsSection = () => {
-  return (
-    <div id='skills' className='max-w-[1280px] min-h-[600px] mx-auto mt-10 mb-10'>
-        <div className='flex flex-col gap-2 mb-16'>
-            <p className='text-4xl font-semibold text-center'>Skills</p>
-            <p className='text-lg text-center opacity-70'>Tools and Technologies</p>
-        </div>
-        <div>
-            {/*
-                <div className='flex flex-row mx-auto max-w-[1000px] items-center justify-center flex-wrap gap-8 md:gap-14 transition-all duration-300'>
-                    <SiJavascript className='text-[#FFDF00] bg-black hover:drop-shadow-lg' size={120}/>
-                    <FaReact className='text-[#61DBFB] hover:drop-shadow-lg' size={120}/>
-                    <FaNodeJs className='text-[#539E43] hover:drop-shadow-lg' size={120}/>
-                    <SiExpress className='text-black hover:drop-shadow-lg' size={120}/>
-                    <SiMongodb className='text-[#47A248] hover:drop-shadow-lg' size={120}/>
-                    <SiRedux className='text-[#764ABC] hover:drop-shadow-lg' size={120}/>
-                    <SiSocketdotio className='text-[#010101]  hover:drop-shadow-lg' size={120}/>
-                    <SiTailwindcss className='text-[#01B7D6] hover:drop-shadow-lg' size={120}/>
-                    <SiMongoose className='text-[#880000] hover:drop-shadow-lg' size={120}/>
-                    <SiCplusplus className='text-[#084A85] hover:drop-shadow-lg' size={120}/>
-                    <SiAppwrite className='text-[#FD366E] hover:drop-shadow-lg' size={120}/>
-                    <SiFirebase className='text-[#FFCC2F] hover:drop-shadow-lg' size={120}/>
-                    <FaHtml5 className='text-[#FF4C1E] hover:drop-shadow-lg' size={120}/>
-                    <FaCss3Alt className='text-[#0065F4] hover:drop-shadow-lg' size={120}/>
-                    <FaGitAlt className='text-[#F05032] hover:drop-shadow-lg' size={120}/>
-                    <FaGithub className='text-black hover:drop-shadow-lg' size={120}/>
-                    <SiPostman className='text-[#FF6C37] hover:drop-shadow-lg' size={120}/>
-                    <SiMysql className='text-[#015B85] hover:drop-shadow-lg' size={120}/>
-                    <SiVercel className='text-black hover:drop-shadow-lg' size={120}/>
-                </div>
-            */}
-            <div className='mb-24 flex flex-row mx-auto max-w-[1280px] px-0 md:px-16 items-center justify-center flex-wrap gap-7 md:gap-7 transition-all duration-300'>
-                {
-                    imgs.map((icon, i) => {
-                        return (
-                            <div className='flex flex-col items-center' key={i}>
-                                <img className='h-[95px] md:h-[104px] drop-shadow-lg hover:drop-shadow-2xl hover:scale-110 transition-all duration-300 cursor-pointer' src={icon}/>
-                                <p className='text-center pt-1 text-[16px] font-medium'>{extractLanguageName(icon)}</p>
-                            </div>
-                        )
-                    })
-                }
-            </div>
-        </div>
-    </div>
-  )
-}
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
-export default SkillsSection
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 20 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: 'easeOut',
+      },
+    },
+  };
+
+  return (
+    <section id='skills' className='max-w-[1280px] min-h-[700px] mx-auto py-20 px-6'>
+      <motion.div 
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className='flex flex-col gap-3 mb-16'
+      >
+        <h2 className='text-5xl font-bold text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
+          Skills & Expertise
+        </h2>
+        <p className='text-xl text-center text-gray-600'>Tools & Technologies I Work With</p>
+        <div className='w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mt-4 rounded-full'></div>
+      </motion.div>
+
+      <motion.div
+        ref={ref}
+        variants={containerVariants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        className='flex flex-row mx-auto max-w-[1280px] px-4 md:px-16 items-center justify-center flex-wrap gap-8 md:gap-10'
+      >
+        {imgs.map((icon, i) => (
+          <motion.div
+            key={i}
+            variants={itemVariants}
+            whileHover={{ 
+              scale: 1.15, 
+              rotate: [0, -5, 5, 0],
+              transition: { duration: 0.3 }
+            }}
+            className='flex flex-col items-center group cursor-pointer'
+          >
+            <div className='relative'>
+              <div className='absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300'></div>
+              <div className='relative bg-white p-5 rounded-2xl shadow-md group-hover:shadow-xl transition-all duration-300 border-2 border-transparent group-hover:border-blue-200'>
+                <img 
+                  className='h-[90px] md:h-[100px] object-contain' 
+                  src={icon}
+                  alt={extractLanguageName(icon)}
+                  loading='lazy'
+                />
+              </div>
+            </div>
+            <p className='text-center pt-3 text-[15px] font-semibold text-gray-700 group-hover:text-blue-600 transition-colors duration-300'>
+              {extractLanguageName(icon)}
+            </p>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      {/* Optional: Skill Categories */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+        className='mt-16 text-center'
+      >
+        <div className='flex flex-wrap justify-center gap-4 max-w-4xl mx-auto'>
+          {['Backend', 'Frontend', 'Cloud & DevOps', 'Databases', 'Tools'].map((category, index) => (
+            <motion.span
+              key={index}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.7 + index * 0.1 }}
+              whileHover={{ scale: 1.05 }}
+              className='px-6 py-3 bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-200 rounded-full text-blue-700 font-medium shadow-sm hover:shadow-md transition-all duration-300'
+            >
+              {category}
+            </motion.span>
+          ))}
+        </div>
+      </motion.div>
+    </section>
+  );
+};
+
+export default SkillsSection;

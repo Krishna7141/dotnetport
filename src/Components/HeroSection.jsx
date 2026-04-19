@@ -1,109 +1,261 @@
-import React, {useEffect, useState} from 'react'
-import Typed from 'typed.js'
-import { FiLinkedin, FiGithub, FiTwitter, FiInstagram, FiMail } from 'react-icons/fi'
-import { RiTwitterXLine, RiGoogleFill } from 'react-icons/ri'
-import { Link } from 'react-router-dom'
-import KrishImg from '../assets/picture1.png'
-import Blob from '../assets/others/blob.svg'
-import { TypeAnimation } from 'react-type-animation'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FiLinkedin, FiGithub, FiMail, FiDownload } from 'react-icons/fi';
+import { RiTwitterXLine } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
+import { TypeAnimation } from 'react-type-animation';
+import KrishImg from '../assets/picture1.png';
 import signatureImg from '../assets/signature1.png';
 
-
 const HeroSection = () => {
+  const socialLinks = [
+    { 
+      icon: FiLinkedin, 
+      url: 'https://www.linkedin.com/in/krishna-chelluboina/', 
+      color: 'hover:text-blue-700',
+      label: 'LinkedIn'
+    },
+    { 
+      icon: FiMail, 
+      url: 'mailto:kvchelluboina@gmail.com', 
+      color: 'hover:text-red-600',
+      label: 'Email'
+    },
+    { 
+      icon: RiTwitterXLine, 
+      url: 'https://x.com/krish127228?s=21', 
+      color: 'hover:text-gray-900',
+      label: 'Twitter'
+    },
+  ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 },
+    },
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.8, ease: 'easeOut' },
+    },
+  };
 
   return (
     <>
-        <div id='home' className='hidden md:flex min-h-[530px] gap-12 max-w-[1280px] mt-10 mb-8 mx-auto px-20 justify-between items-center'>
-            <div className='flex flex-row w-[57%] gap-20 items-center'>
-                <div className='flex flex-col gap-7 justify-center'>
-                    <Link to={'https://www.linkedin.com/in/krishna-chelluboina/'} target='_blank'>
-                        <FiLinkedin className='text-blue-700 hover:drop-shadow-md' size={30}/>
-                    </Link>
-                    <Link to={'mailto:kvchelluboina@gmail.com'} target='_blank'>
-                        <FiMail className='text-blue-700 hover:drop-shadow-md' size={30}/>
-                    </Link>
-                    <Link to={'https://x.com/krish127228?s=21'} target='_blank'>
-                        <RiTwitterXLine className='text-blue-700 hover:drop-shadow-md' size={30}/>
-                    </Link>
-                </div>
-                <div className='flex flex-col gap-7 w-full'>
-                    <p className='text-5xl font-poppins md:font-[800] lg:font-[900] text-blue-700'><span className='font-semibold text-black'>I'm, </span>Krishna Chelluboina</p>
-                    <TypeAnimation
-                        sequence={[
-                            'Senior Full-Stack .NET Developer', 2000,
-                            '.NET Cloud & Microservices Engineer', 1000,
-                            '.NET Solutions Architect / Technical Lead', 1000,
-                            'Full-Stack Web Application Developer', 1000,
-                            /*'MERN Developer', 1000,*/
-                            'Problem Solver', 1000,
-                            'Coder', 1000
-                        ]}
-                        wrapper='span'
-                        speed={40}
-                        className='text-3xl font-medium text-blue-950 /*text-[#000080]*/'
-                        repeat={Infinity}
-                    />
-                    {/* <p className='text-xl text-justify'>A Engineer Working on Actively Learning the Skills Required to be an Efficient Software Engineer, Flexible to Learn New Technologies.</p> */}
-                    <p className='text-xl text-justify'>A Senior Full Stack .NET Developer Contractor with 10+ years of experience. I love turning complex problems into clean, scalable solutions and believe great code is as much about people as it is about tech. Dark mode isnt a feature for me its a lifestyle.</p>
-                    <div className='flex gap-4'>
-                        <button className='border p-2 hover:bg-blue-900 bg-blue-700 rounded-lg text-white text-lg px-4 w-fit text-center'><a href='#contact'>Contact Me</a></button>
-                    </div>
-                </div>
-            </div>
-            <div className=''>
-                {/* <img src={Blob} className='absolute z-50 h-[500px] -translate-x-5 translate-y-10 scale-150 opacity-80'/> */}
-                <img src={KrishImg} className='z-50 contrast-125 scale-95 transition-all duration-1000 max-h-[430px]'/>
-                <img src={signatureImg} alt="Signature"
-                     className="w-40 mx-auto mt-4 opacity-90 transition-opacity duration-700 hover:opacity-100" />
-            </div>
-        </div>
+      {/* Desktop Version */}
+      <section 
+        id='home' 
+        className='hidden md:flex min-h-screen gap-12 max-w-[1280px] pt-24 pb-16 mx-auto px-20 justify-between items-center'
+      >
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className='flex flex-row w-[57%] gap-20 items-center'
+        >
+          {/* Social Links */}
+          <motion.div 
+            variants={itemVariants}
+            className='flex flex-col gap-6 justify-center'
+          >
+            {socialLinks.map((social, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Link to={social.url} target='_blank' aria-label={social.label}>
+                  <social.icon className={`text-blue-600 transition-colors duration-300 ${social.color}`} size={32}/>
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
 
+          {/* Main Content */}
+          <div className='flex flex-col gap-7 w-full'>
+            <motion.p 
+              variants={itemVariants}
+              className='text-5xl font-poppins font-[900] text-blue-700'
+            >
+              <span className='font-semibold text-gray-800'>Hi, I'm </span>
+              Krishna Chelluboina
+            </motion.p>
+            
+            <motion.div variants={itemVariants}>
+              <TypeAnimation
+                sequence={[
+                  'Senior Full-Stack .NET Developer', 2000,
+                  '.NET Cloud & Microservices Engineer', 2000,
+                  '.NET Solutions Architect', 2000,
+                  'Full-Stack Web Developer', 2000,
+                  'Problem Solver & Innovator', 2000,
+                ]}
+                wrapper='span'
+                speed={50}
+                className='text-3xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'
+                repeat={Infinity}
+              />
+            </motion.div>
 
-        <div id='home' className='flex flex-col md:hidden max-w-[1280px] mt-10 mb-8 mx-auto justify-between'>
-            <div className='flex flex-row w-full px-10 mx-auto items-center justify-around'>
-                <div className='flex flex-col gap-7 items-center justify-center'>
-                    <Link to={'https://www.linkedin.com/in/krishna-chelluboina/'} target='_blank'>
-                        <FiLinkedin className='text-blue-700 hover:drop-shadow-md' size={30}/>
-                    </Link>
-                    <Link to={'mailto:kvchelluboina@gmail.com'} target='_blank'>
-                        <FiMail className='text-blue-700 hover:drop-shadow-md' size={30}/>
-                    </Link>
-                    <Link to={'https://x.com/krish127228?s=21'} target='_blank'>
-                        <RiTwitterXLine className='text-blue-700 hover:drop-shadow-md' size={30}/>
-                    </Link>
-                </div>
-                <div className='flex mt-9 flex-col pl-10 gap-4 w-full'>
-                    <p className='text-4xl font-poppins font-[900] text-blue-600'><span className='font-semibold text-black'>I'm, </span>Krishna Vamsi</p>
-                    <TypeAnimation
-                        sequence={[
-                            'Senior Full-Stack .NET Developer', 2000,
-                            '.NET Cloud & Microservices Engineer', 1000,
-                            '.NET Solutions Architect / Technical Lead', 1000,
-                            'Full-Stack Web Application Developer', 1000,
-                            /*'MERN Developer', 1000,*/
-                            'Problem Solver', 1000,
-                            'Coder', 1000
-                        ]}
-                        wrapper='span'
-                        speed={40}
-                        className='text-xl font-medium text-blue-950 /*text-[#000080]*/'
-                        repeat={Infinity}
-                    />
-                    {/* <p className='text-base text-justify'>A Engineer Working on Actively Learning the Skills Required to be an Efficient Software Engineer, Flexible to Learn New Technologies.</p> */}
-                    <p className='text-base text-justify'>A Senior Full Stack .NET Developer Contractor with 10+ years of experience. I love turning complex problems into clean, scalable solutions and believe great code is as much about people as it is about tech. Dark mode isnt a feature for me its a lifestyle.</p>
-                    <div className='flex gap-4'>
-                         <a href="#contact" className="border p-2 hover:bg-blue-900 bg-blue-700 rounded-lg text-white text-lg px-4 w-fit text-center">Contact Me</a>
-                    </div>    
-                </div>
+            <motion.p 
+              variants={itemVariants}
+              className='text-xl text-gray-700 leading-relaxed'
+            >
+              A Senior Full Stack .NET Developer Contractor with <strong>10+ years</strong> of experience. 
+              I love turning complex problems into clean, scalable solutions and believe great code is as much 
+              about <strong>people</strong> as it is about <strong>technology</strong>. 
+              <br/><br/>
+              <span className='text-blue-600 font-medium'>Dark mode isn't a feature for me — it's a lifestyle. ??</span>
+            </motion.p>
+
+            <motion.div 
+              variants={itemVariants}
+              className='flex gap-4'
+            >
+              <motion.a
+                href='#contact'
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className='bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-3 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300'
+              >
+                Contact Me
+              </motion.a>
+              
+              <motion.a
+                href='#work'
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className='border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-medium transition-all duration-300'
+              >
+                View Work
+              </motion.a>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Profile Image */}
+        <motion.div 
+          variants={imageVariants}
+          initial="hidden"
+          animate="visible"
+          className='relative'
+        >
+          <div className='absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full blur-3xl opacity-20 animate-pulse'></div>
+          <motion.img 
+            src={KrishImg} 
+            className='relative z-10 contrast-125 scale-95 transition-all duration-1000 max-h-[480px] drop-shadow-2xl'
+            alt='Krishna Chelluboina'
+            whileHover={{ scale: 1.02 }}
+          />
+          <motion.img 
+            src={signatureImg} 
+            alt="Signature"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.9 }}
+            transition={{ delay: 1, duration: 1 }}
+            className="w-44 mx-auto mt-6 opacity-90 transition-opacity duration-700 hover:opacity-100" 
+          />
+        </motion.div>
+      </section>
+
+      {/* Mobile Version */}
+      <section 
+        id='home-mobile' 
+        className='flex flex-col md:hidden max-w-[1280px] pt-24 pb-12 mx-auto'
+      >
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className='flex flex-col items-center gap-8 px-6'
+        >
+          {/* Profile Image Mobile */}
+          <div className='relative'>
+            <div className='absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full blur-2xl opacity-20'></div>
+            <img 
+              src={KrishImg} 
+              className='relative z-10 contrast-125 h-[280px] drop-shadow-2xl'
+              alt='Krishna Chelluboina'
+            />
+          </div>
+
+          {/* Content Mobile */}
+          <div className='flex flex-col gap-6 text-center'>
+            <p className='text-4xl font-poppins font-[900] text-blue-700'>
+              <span className='font-semibold text-gray-800'>Hi, I'm </span>
+              Krishna Chelluboina
+            </p>
+            
+            <TypeAnimation
+              sequence={[
+                'Senior Full-Stack .NET Developer', 2000,
+                '.NET Cloud & Microservices Engineer', 2000,
+                'Solutions Architect', 2000,
+                'Problem Solver', 2000,
+              ]}
+              wrapper='span'
+              speed={50}
+              className='text-2xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'
+              repeat={Infinity}
+            />
+
+            <p className='text-base text-gray-700 leading-relaxed'>
+              A Senior Full Stack .NET Developer with <strong>10+ years</strong> of experience 
+              turning complex problems into scalable solutions. Dark mode lifestyle. ??
+            </p>
+
+            {/* Social Links Mobile */}
+            <div className='flex gap-6 justify-center mt-4'>
+              {socialLinks.map((social, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ scale: 1.15 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <Link to={social.url} target='_blank' aria-label={social.label}>
+                    <social.icon className={`text-blue-600 ${social.color}`} size={32}/>
+                  </Link>
+                </motion.div>
+              ))}
             </div>
+
+            <div className='flex flex-col gap-3 mt-4'>
+              <a 
+                href="#contact" 
+                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-8 rounded-lg font-medium shadow-lg"
+              >
+                Contact Me
+              </a>
+              <a 
+                href="#work" 
+                className="border-2 border-blue-600 text-blue-600 py-3 px-8 rounded-lg font-medium"
+              >
+                View Work
+              </a>
             </div>
-            <div className='flex items-center justify-center'>
-                {/* <img src={Blob} className='absolute z-50 h-[500px] -translate-x-5 translate-y-10 scale-150 opacity-80'/> */}
-                <img src={KrishImg} className='z-10 mb-10 flex md:hidden contrast-125 scale-95 transition-all duration-1000 h-[350px]'/>
-            </div>
+          </div>
+        </motion.div>
+      </section>
     </>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;
