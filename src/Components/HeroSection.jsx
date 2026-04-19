@@ -254,14 +254,14 @@ const HeroSection = () => {
               </div>
             </div>
             
-            {/* Signature with Modern Styling */}
+            {/* Signature with Modern Styling - Transparent/Gradient Background */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.4, duration: 1 }}
               className='absolute -bottom-8 left-1/2 -translate-x-1/2 w-full flex justify-center'
             >
-              <div className='relative px-8 py-3 bg-white rounded-2xl shadow-2xl border border-gray-100'>
+              <div className='relative px-8 py-3 bg-gradient-to-br from-blue-50/80 via-purple-50/80 to-pink-50/80 backdrop-blur-md rounded-2xl shadow-2xl border border-blue-200/50'>
                 <img 
                   src={signatureImg} 
                   alt="Krishna Chelluboina Signature"
@@ -331,14 +331,14 @@ const HeroSection = () => {
               </div>
             </motion.div>
             
-            {/* Signature - Mobile */}
+            {/* Signature - Mobile - Transparent/Gradient Background */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
               className='mt-6 flex justify-center'
             >
-              <div className='px-6 py-2 bg-white rounded-xl shadow-xl border border-gray-100'>
+              <div className='px-6 py-2 bg-gradient-to-br from-blue-50/80 via-purple-50/80 to-pink-50/80 backdrop-blur-md rounded-xl shadow-xl border border-blue-200/50'>
                 <img 
                   src={signatureImg} 
                   alt="Krishna Chelluboina Signature"
