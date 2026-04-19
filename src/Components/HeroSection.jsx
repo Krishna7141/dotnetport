@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiLinkedin, FiMail, FiDownload, FiArrowRight, FiCode } from 'react-icons/fi';
-import { RiTwitterXLine } from 'react-icons/ri';
+import { FiLinkedin, FiMail, FiDownload, FiArrowRight, FiCode, FiZap } from 'react-icons/fi';
+import { RiTwitterXLine, RiRocketLine, RiMoonLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import { TypeAnimation } from 'react-type-animation';
 import KrishImg from '../assets/picture1.png';
@@ -170,8 +170,9 @@ const HeroSection = () => {
               className='relative p-5 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-2xl border border-blue-200/50 backdrop-blur-sm'
             >
               <div className='absolute -left-2 top-1/2 -translate-y-1/2 w-1 h-12 bg-gradient-to-b from-blue-600 to-purple-600 rounded-full'></div>
-              <p className='text-base text-gray-700 font-medium italic pl-3'>
-                "Dark mode isn't a feature for me — it's a lifestyle. ??"
+              <p className='text-base text-gray-700 font-medium italic pl-3 flex items-center gap-2'>
+                "Dark mode isn't a feature for me — it's a lifestyle."
+                <RiMoonLine className='text-blue-600' size={20} />
               </p>
             </motion.div>
 
@@ -275,7 +276,7 @@ const HeroSection = () => {
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             >
-              <span className='text-2xl'>?</span>
+              <FiZap className='text-white' size={32} />
             </motion.div>
             
             <motion.div
@@ -283,7 +284,7 @@ const HeroSection = () => {
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
             >
-              <span className='text-2xl'>??</span>
+              <RiRocketLine className='text-white' size={28} />
             </motion.div>
           </motion.div>
         </motion.div>
@@ -326,7 +327,7 @@ const HeroSection = () => {
               
               {/* Badge */}
               <div className='absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg'>
-                <span className='text-3xl'>?</span>
+                <FiZap className='text-white' size={28} />
               </div>
             </motion.div>
             
@@ -388,8 +389,9 @@ const HeroSection = () => {
 
             {/* Quote Box - Mobile */}
             <div className='p-4 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl border border-blue-200/50'>
-              <p className='text-sm text-gray-700 font-medium italic'>
-                "Dark mode isn't a feature — it's a lifestyle. ??"
+              <p className='text-sm text-gray-700 font-medium italic flex items-center justify-center gap-2'>
+                "Dark mode isn't a feature — it's a lifestyle."
+                <RiMoonLine className='text-blue-600' size={18} />
               </p>
             </div>
 
