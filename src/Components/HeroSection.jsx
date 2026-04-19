@@ -164,13 +164,13 @@ const HeroSection = () => {
           variants={imageVariants}
           initial="hidden"
           animate="visible"
-          className='flex flex-col items-center justify-center'
+          className='flex flex-col items-center justify-center w-[43%]'
         >
-          <div className='relative'>
+          <div className='relative w-full flex justify-center'>
             <div className='absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full blur-3xl opacity-20 animate-pulse'></div>
             <motion.img 
               src={KrishImg} 
-              className='relative z-10 contrast-125 transition-all duration-1000 max-h-[480px] drop-shadow-2xl rounded-3xl'
+              className='relative z-10 w-full max-w-[480px] h-auto contrast-125 transition-all duration-1000 drop-shadow-2xl rounded-3xl'
               alt='Krishna Chelluboina'
               whileHover={{ scale: 1.02 }}
             />
@@ -183,7 +183,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 0.9, y: 0 }}
             transition={{ delay: 1.2, duration: 1 }}
-            className="w-56 mt-8 opacity-90 transition-opacity duration-700 hover:opacity-100" 
+            className="w-64 max-w-full mt-10 opacity-90 transition-opacity duration-700 hover:opacity-100" 
           />
         </motion.div>
       </section>
@@ -200,12 +200,12 @@ const HeroSection = () => {
           className='flex flex-col items-center gap-8 px-6'
         >
           {/* Profile Image Mobile */}
-          <div className='flex flex-col items-center'>
-            <div className='relative'>
+          <div className='flex flex-col items-center w-full'>
+            <div className='relative w-full max-w-sm flex justify-center'>
               <div className='absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full blur-2xl opacity-20'></div>
               <img 
                 src={KrishImg} 
-                className='relative z-10 contrast-125 h-[280px] drop-shadow-2xl rounded-3xl'
+                className='relative z-10 w-full max-w-[280px] h-auto contrast-125 drop-shadow-2xl rounded-3xl'
                 alt='Krishna Chelluboina'
               />
             </div>
@@ -217,7 +217,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 0.9, y: 0 }}
               transition={{ delay: 0.8, duration: 1 }}
-              className="w-40 mt-6 opacity-90" 
+              className="w-48 max-w-[80%] mt-8 opacity-90" 
             />
           </div>
 
