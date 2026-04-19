@@ -112,7 +112,7 @@ const PersonalAboutSection = () => {
             <div>
               <div className="text-4xl mb-2">🌙</div>
               <p className="font-medium">Dark Mode Enthusiast</p>
-              <p className="text-sm text-blue-100 mt-1">It's not a feature — it's a lifestyle</p>
+              <p className="text-sm text-blue-100 mt-1">It&apos;s not a feature — it&apos;s a lifestyle</p>
             </div>
             <div>
               <div className="text-4xl mb-2">✈️</div>

@@ -132,7 +132,7 @@ const HeroSection = () => {
               variants={itemVariants}
               className='text-base text-blue-600 font-medium italic'
             >
-              Dark mode isn't a feature for me — it's a lifestyle. ??
+              Dark mode is not a feature for me it is a lifestyle
             </motion.p>
 
             <motion.div 
@@ -164,27 +164,31 @@ const HeroSection = () => {
           variants={imageVariants}
           initial="hidden"
           animate="visible"
-          className='flex flex-col items-center justify-center w-[43%]'
+          className='flex flex-col items-center justify-start w-[43%] gap-0'
         >
-          <div className='relative w-full flex justify-center'>
-            <div className='absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full blur-3xl opacity-20 animate-pulse'></div>
+          {/* Picture Container */}
+          <div className='relative w-full max-w-[500px]'>
             <motion.img 
               src={KrishImg} 
-              className='relative z-10 w-full max-w-[480px] h-auto contrast-125 transition-all duration-1000 drop-shadow-2xl rounded-3xl'
+              className='w-full h-auto object-contain drop-shadow-2xl'
               alt='Krishna Chelluboina'
               whileHover={{ scale: 1.02 }}
             />
           </div>
           
-          {/* Signature below profile picture */}
-          <motion.img 
-            src={signatureImg} 
-            alt="Krishna Chelluboina Signature"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 0.9, y: 0 }}
+          {/* Signature directly below picture - no gap */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 1 }}
-            className="w-64 max-w-full mt-10 opacity-90 transition-opacity duration-700 hover:opacity-100" 
-          />
+            className='w-full max-w-[500px] flex justify-center -mt-4'
+          >
+            <img 
+              src={signatureImg} 
+              alt="Krishna Chelluboina Signature"
+              className="w-64 h-auto opacity-90 transition-opacity duration-700 hover:opacity-100" 
+            />
+          </motion.div>
         </motion.div>
       </section>
 
@@ -200,25 +204,28 @@ const HeroSection = () => {
           className='flex flex-col items-center gap-8 px-6'
         >
           {/* Profile Image Mobile */}
-          <div className='flex flex-col items-center w-full'>
-            <div className='relative w-full max-w-sm flex justify-center'>
-              <div className='absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full blur-2xl opacity-20'></div>
+          <div className='flex flex-col items-center w-full gap-0'>
+            <div className='relative w-full max-w-[320px]'>
               <img 
                 src={KrishImg} 
-                className='relative z-10 w-full max-w-[280px] h-auto contrast-125 drop-shadow-2xl rounded-3xl'
+                className='w-full h-auto object-contain drop-shadow-2xl'
                 alt='Krishna Chelluboina'
               />
             </div>
             
-            {/* Signature below profile picture on mobile */}
-            <motion.img 
-              src={signatureImg} 
-              alt="Krishna Chelluboina Signature"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 0.9, y: 0 }}
+            {/* Signature below profile picture on mobile - no gap */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 1 }}
-              className="w-48 max-w-[80%] mt-8 opacity-90" 
-            />
+              className='w-full max-w-[320px] flex justify-center -mt-3'
+            >
+              <img 
+                src={signatureImg} 
+                alt="Krishna Chelluboina Signature"
+                className="w-48 h-auto opacity-90" 
+              />
+            </motion.div>
           </div>
 
           {/* Content Mobile */}
@@ -247,7 +254,7 @@ const HeroSection = () => {
             </p>
 
             <p className='text-sm text-blue-600 font-medium italic'>
-              Dark mode isn't a feature for me — it's a lifestyle. ??
+              Dark mode is not a feature for me it is a lifestyle
             </p>
 
             {/* Social Links Mobile */}
