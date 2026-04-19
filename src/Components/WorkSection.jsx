@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FiCalendar, FiBriefcase, FiTrendingUp } from 'react-icons/fi';
+import mastercardImg from '../assets/mastercard.png';
 import capitaloneImg from '../assets/capitalone.jpg';
 import careingtonImg from '../assets/Careington.jpg';
 import corevitasImg from '../assets/corevitas.jpg';
@@ -16,14 +17,26 @@ const WorkSection = () => {
 
   const experiences = [
     {
-      company: 'Capital One',
+      company: 'Mastercard',
+      location: 'Arlington, VA',
       role: 'Senior Full Stack .NET Developer',
-      period: 'June 2023 – Present',
+      period: 'Aug 2025 – Present',
+      image: mastercardImg,
+      description:
+        'Designed and enhanced a multi-tenant data observability and automated maintenance platform using .NET 8, ASP.NET Core, and C# 13, supporting reliable data setup, validation, and remediation workflows across multiple production database instances.',
+      skills: ['.NET 8', 'ASP.NET Core', 'React 18', 'TypeScript', 'Azure', 'Hangfire', 'EF Core'],
+      current: true,
+    },
+    {
+      company: 'Capital One',
+      location: 'McLean, VA',
+      role: 'Senior Full Stack .NET Developer',
+      period: 'Jun 2023 – Aug 2025',
       image: capitaloneImg,
       description:
         'Architected and delivered a next-generation loan origination and servicing platform using .NET 8, ASP.NET Core Web API, and C# 11, automating underwriting and reducing loan approval time by 40%.',
       skills: ['.NET 8', 'Azure', 'Microservices', 'Angular'],
-      current: true,
+      current: false,
     },
     {
       company: 'Careington',
@@ -139,6 +152,10 @@ const WorkSection = () => {
               <h3 className="text-2xl font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
                 {exp.company}
               </h3>
+
+              {exp.location && (
+                <p className="text-sm text-gray-500 mb-2">{exp.location}</p>
+              )}
 
               <div className="flex items-center gap-2 text-blue-600 font-semibold mb-3">
                 <FiBriefcase size={18} />

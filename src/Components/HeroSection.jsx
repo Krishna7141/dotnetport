@@ -98,52 +98,60 @@ const HeroSection = () => {
               <span className='font-semibold text-gray-800'>Hi, I'm </span>
               Krishna Chelluboina
             </motion.p>
-            
+
             <motion.div variants={itemVariants}>
+              <p className='text-2xl font-semibold mb-2 text-gray-700'>
+                <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
+                  Proble
+                </span>
+              </p>
               <TypeAnimation
                 sequence={[
                   'Senior Full-Stack .NET Developer', 2000,
                   '.NET Cloud & Microservices Engineer', 2000,
-                  '.NET Solutions Architect', 2000,
-                  'Full-Stack Web Developer', 2000,
-                  'Problem Solver & Innovator', 2000,
+                  'Solutions Architect', 2000,
+                  'Problem Solver', 2000,
                 ]}
                 wrapper='span'
                 speed={50}
-                className='text-3xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'
+                className='text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'
                 repeat={Infinity}
               />
             </motion.div>
 
             <motion.p 
               variants={itemVariants}
-              className='text-xl text-gray-700 leading-relaxed'
+              className='text-lg text-gray-700 leading-relaxed'
             >
-              A Senior Full Stack .NET Developer Contractor with <strong>10+ years</strong> of experience. 
-              I love turning complex problems into clean, scalable solutions and believe great code is as much 
-              about <strong>people</strong> as it is about <strong>technology</strong>. 
-              <br/><br/>
-              <span className='text-blue-600 font-medium'>Dark mode isn't a feature for me — it's a lifestyle. ??</span>
+              A Senior Full Stack .NET Developer with <strong>10+ years</strong> of experience. 
+              I love turning complex problems into clean, scalable solutions and believe great code 
+              is as much about <strong className='text-blue-600'>people</strong> as it is about <strong className='text-blue-600'>technology</strong>.
+            </motion.p>
+
+            <motion.p 
+              variants={itemVariants}
+              className='text-base text-blue-600 font-medium italic'
+            >
+              Dark mode isn't a feature for me — it's a lifestyle. ??
             </motion.p>
 
             <motion.div 
               variants={itemVariants}
-              className='flex gap-4'
+              className='flex gap-4 mt-2'
             >
-              <motion.a
-                href='#contact'
-                whileHover={{ scale: 1.05 }}
+              <motion.a 
+                href="#contact"
+                whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(59, 130, 246, 0.3)' }}
                 whileTap={{ scale: 0.95 }}
-                className='bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-3 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300'
+                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-3 px-8 rounded-lg font-semibold shadow-lg transition-all duration-300"
               >
                 Contact Me
               </motion.a>
-              
-              <motion.a
-                href='#work'
+              <motion.a 
+                href="#work"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className='border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-medium transition-all duration-300'
+                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 py-3 px-8 rounded-lg font-semibold transition-all duration-300"
               >
                 View Work
               </motion.a>
@@ -151,27 +159,31 @@ const HeroSection = () => {
           </div>
         </motion.div>
 
-        {/* Profile Image */}
+        {/* Profile Image with Signature - Desktop */}
         <motion.div 
           variants={imageVariants}
           initial="hidden"
           animate="visible"
-          className='relative'
+          className='flex flex-col items-center justify-center'
         >
-          <div className='absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full blur-3xl opacity-20 animate-pulse'></div>
-          <motion.img 
-            src={KrishImg} 
-            className='relative z-10 contrast-125 scale-95 transition-all duration-1000 max-h-[480px] drop-shadow-2xl'
-            alt='Krishna Chelluboina'
-            whileHover={{ scale: 1.02 }}
-          />
+          <div className='relative'>
+            <div className='absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full blur-3xl opacity-20 animate-pulse'></div>
+            <motion.img 
+              src={KrishImg} 
+              className='relative z-10 contrast-125 transition-all duration-1000 max-h-[480px] drop-shadow-2xl rounded-3xl'
+              alt='Krishna Chelluboina'
+              whileHover={{ scale: 1.02 }}
+            />
+          </div>
+          
+          {/* Signature below profile picture */}
           <motion.img 
             src={signatureImg} 
-            alt="Signature"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.9 }}
-            transition={{ delay: 1, duration: 1 }}
-            className="w-44 mx-auto mt-6 opacity-90 transition-opacity duration-700 hover:opacity-100" 
+            alt="Krishna Chelluboina Signature"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 0.9, y: 0 }}
+            transition={{ delay: 1.2, duration: 1 }}
+            className="w-56 mt-8 opacity-90 transition-opacity duration-700 hover:opacity-100" 
           />
         </motion.div>
       </section>
@@ -188,12 +200,24 @@ const HeroSection = () => {
           className='flex flex-col items-center gap-8 px-6'
         >
           {/* Profile Image Mobile */}
-          <div className='relative'>
-            <div className='absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full blur-2xl opacity-20'></div>
-            <img 
-              src={KrishImg} 
-              className='relative z-10 contrast-125 h-[280px] drop-shadow-2xl'
-              alt='Krishna Chelluboina'
+          <div className='flex flex-col items-center'>
+            <div className='relative'>
+              <div className='absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full blur-2xl opacity-20'></div>
+              <img 
+                src={KrishImg} 
+                className='relative z-10 contrast-125 h-[280px] drop-shadow-2xl rounded-3xl'
+                alt='Krishna Chelluboina'
+              />
+            </div>
+            
+            {/* Signature below profile picture on mobile */}
+            <motion.img 
+              src={signatureImg} 
+              alt="Krishna Chelluboina Signature"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 0.9, y: 0 }}
+              transition={{ delay: 0.8, duration: 1 }}
+              className="w-40 mt-6 opacity-90" 
             />
           </div>
 
@@ -219,7 +243,11 @@ const HeroSection = () => {
 
             <p className='text-base text-gray-700 leading-relaxed'>
               A Senior Full Stack .NET Developer with <strong>10+ years</strong> of experience 
-              turning complex problems into scalable solutions. Dark mode lifestyle. ??
+              turning complex problems into scalable solutions.
+            </p>
+
+            <p className='text-sm text-blue-600 font-medium italic'>
+              Dark mode isn't a feature for me — it's a lifestyle. ??
             </p>
 
             {/* Social Links Mobile */}

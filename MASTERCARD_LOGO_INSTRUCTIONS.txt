@@ -1,0 +1,34 @@
+HOW TO GET THE MASTERCARD LOGO
+================================
+
+Option 1: Download from Official Source
+----------------------------------------
+1. Visit: https://brand.mastercard.com/brandcenter/mastercard-brand-mark.html
+2. Download the Mastercard logo (the one with red and orange overlapping circles)
+3. Save it as PNG format
+4. Rename to: mastercard.png
+5. Replace the file at: src/assets/mastercard.png
+
+Option 2: Extract from LinkedIn
+--------------------------------
+1. Open your LinkedIn profile screenshot
+2. Crop the Mastercard logo (the two circles - red and orange)
+3. Save as PNG with transparent background if possible
+4. Rename to: mastercard.png
+5. Replace the file at: src/assets/mastercard.png
+
+Option 3: Search for Mastercard Logo
+-------------------------------------
+1. Google: "Mastercard logo PNG transparent"
+2. Download a high-quality version (at least 500x500 pixels)
+3. Make sure it's the official logo (red and orange circles)
+4. Save as: mastercard.png
+5. Replace the file at: src/assets/mastercard.png
+
+QUICK REFERENCE:
+- File should be: PNG format
+- Recommended size: 800x600 or similar
+- Should show the iconic red and orange overlapping circles
+- Location: src/assets/mastercard.png
+
+The image you provided in your message shows the correct Mastercard logo!
